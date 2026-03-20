@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Jednoúčelové zariadenia – Etraktor, s.r.o.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav id="mainNav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><img src="images/logo.jpg" alt="logo" class="nav-logo-img"/><span class="nav-logo-text">Etraktor<span class="nav-logo-sub">, s.r.o.</span></span></a>
+  <div class="nav-links"><a href="index.html">Domov</a><a href="palety.html">Transportné palety</a><a href="zariadenia.html" class="active">Jednoúčelové zariadenia</a><a href="vyroba.html">Výroba</a><a href="produkty.html">Vlastné produkty</a><a href="kontakt.html" class="nav-cta">Kontakt</a></div>
+  <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Domov</a><a href="palety.html">Transportné palety</a><a href="zariadenia.html">Jednoúčelové zariadenia</a><a href="vyroba.html">Výroba</a><a href="produkty.html">Vlastné produkty</a><a href="kontakt.html">Kontakt</a></div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="tag">Priemyselná automatizácia</span>
+    <h1>Jednoúčelové zariadenia</h1>
+    <p>Vytvoríme Vám zariadenie na kľúč podľa požiadaviek. Testovacie zariadenia, montážne prípravky, kontrolné prípravky a ďalšie.</p>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="container">
+    <span class="tag">Ukážky realizácií</span>
+    <h2 class="section-title">Naše realizácie</h2>
+    <p class="section-desc">Každé zariadenie je navrhnuté a vyrobené presne podľa špecifických požiadaviek klienta.</p>
+    <div class="content-three-col">
+      <div class="img-card" onclick="openLightbox(['images/image5.png','images/image6.png','images/image7.png'],0)">
+        <img src="images/image5.png" alt="Linka dverí pre školiace stredisko"/>
+        <div class="img-card-body">
+          <div class="img-card-title">Linka dverí pre školiace stredisko</div>
+          <div class="img-card-desc">Kompletné riešenie na kľúč vrátane konštrukčného vývoja a montáže.</div>
+        </div>
+      </div>
+      <div class="img-card" onclick="openLightbox(['images/image5.png','images/image6.png','images/image7.png'],1)">
+        <img src="images/image6.png" alt="Kontrolné prípravky"/>
+        <div class="img-card-body">
+          <div class="img-card-title">Kontrolné prípravky</div>
+          <div class="img-card-desc">Presné kontrolné prípravky pre výrobné linky a QA procesy.</div>
+        </div>
+      </div>
+      <div class="img-card" onclick="openLightbox(['images/image5.png','images/image6.png','images/image7.png'],2)">
+        <img src="images/image7.png" alt="Násypný vážiaci modul"/>
+        <div class="img-card-body">
+          <div class="img-card-title">Násypný vážiaci modul</div>
+          <div class="img-card-desc">Špeciálne zariadenie pre presné váženie a dávkovanie materiálu.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="tag">Čo ponúkame</span>
+    <h2 class="section-title">Typy zariadení</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;">
+      <div style="background:white;border-radius:12px;padding:2rem;border:1px solid var(--border);box-shadow:var(--shadow);">
+        <div style="width:48px;height:48px;background:#eef1fb;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;">Testovacie zariadenia</h3>
+        <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.55;">Zariadenia pre funkčné testovanie komponentov a zostáv v rámci výrobného procesu.</p>
+      </div>
+      <div style="background:white;border-radius:12px;padding:2rem;border:1px solid var(--border);box-shadow:var(--shadow);">
+        <div style="width:48px;height:48px;background:#eef1fb;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;">Montážne prípravky</h3>
+        <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.55;">Špeciálne prípravky zabezpečujúce správnu polohu a postup pri montáži dielov a zostáv.</p>
+      </div>
+      <div style="background:white;border-radius:12px;padding:2rem;border:1px solid var(--border);box-shadow:var(--shadow);">
+        <div style="width:48px;height:48px;background:#eef1fb;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;">Kontrolné prípravky</h3>
+        <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.55;">Meracie a kontrolné prípravky pre overenie rozmerovej správnosti dielov počas výroby.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="container">
+    <span class="tag" style="border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);">Náš postup</span>
+    <h2 class="section-title">Vývoj produktu A – Z</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2rem;">
+      <div style="text-align:center;padding:1.5rem 1rem;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:900;color:var(--accent);line-height:1;margin-bottom:0.75rem;">01</div>
+        <h4 style="font-weight:700;margin-bottom:0.5rem;">Rešerš &amp; Koncept</h4>
+        <p style="font-size:0.85rem;opacity:0.7;line-height:1.5;">Rešerš aktuálnych riešení vo svete, koncepty a plány nákladov.</p>
+      </div>
+      <div style="text-align:center;padding:1.5rem 1rem;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:900;color:var(--accent);line-height:1;margin-bottom:0.75rem;">02</div>
+        <h4 style="font-weight:700;margin-bottom:0.5rem;">Konštrukcia</h4>
+        <p style="font-size:0.85rem;opacity:0.7;line-height:1.5;">Dodávateľ konštrukčnej dokumentácie, konštrukčný vývoj.</p>
+      </div>
+      <div style="text-align:center;padding:1.5rem 1rem;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:900;color:var(--accent);line-height:1;margin-bottom:0.75rem;">03</div>
+        <h4 style="font-weight:700;margin-bottom:0.5rem;">Výroba &amp; Montáž</h4>
+        <p style="font-size:0.85rem;opacity:0.7;line-height:1.5;">Realizačná činnosť výroby produktu, montáž a oživenie.</p>
+      </div>
+      <div style="text-align:center;padding:1.5rem 1rem;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:900;color:var(--accent);line-height:1;margin-bottom:0.75rem;">04</div>
+        <h4 style="font-weight:700;margin-bottom:0.5rem;">Certifikácia</h4>
+        <p style="font-size:0.85rem;opacity:0.7;line-height:1.5;">Dokumentácia a certifikácia v spolupráci s TISR.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="refs-section alt">
+  <div class="container">
+    <span class="tag">Dôvera</span><h2 class="section-title">Referencie</h2>
+    <div class="refs-logos">
+      <div class="ref-logo"><img src="images/image17.png" alt="Strojnícka fakulta TU Košice"/></div>
+      <div class="ref-logo"><img src="images/image18.png" alt="PIAFA Vyškov"/></div>
+      <div class="ref-logo"><img src="images/image19.png" alt="Žilinská Univerzita"/></div>
+      <div class="ref-logo"><img src="images/image20.png" alt="Referencia 4"/></div>
+      <div class="ref-logo"><img src="images/image21.png" alt="Referencia 5"/></div>
+      <div class="ref-logo"><img src="images/image22.png" alt="Referencia 6"/></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner"><div class="container"><div class="cta-inner">
+  <div><h2>Máte špecifické požiadavky?</h2><p>Vytvoríme Vám zariadenie na kľúč &ndash; od konceptu po certifikáciu.</p></div>
+  <a href="kontakt.html" class="btn-primary">Kontaktujte nás</a>
+</div></div></section>
+
+<footer class="site-footer"><div class="container footer-inner">
+  <div class="footer-logo"><img src="images/logo.jpg" alt="logo" style="height:44px;"/><span>Etraktor, s.r.o.</span></div>
+  <div class="footer-links"><a href="index.html">Domov</a><a href="palety.html">Palety</a><a href="zariadenia.html">Zariadenia</a><a href="vyroba.html">Výroba</a><a href="produkty.html">Produkty</a><a href="kontakt.html">Kontakt</a></div>
+  <div class="footer-copy">&copy; 2025 Etraktor, s.r.o. &bull; Duklianska 1376/17, 08501 Bardejov</div>
+</div></footer>
+
+<div class="lightbox" id="lightbox"><button class="lb-close" onclick="closeLb()">&#215;</button><button class="lb-arrow lb-prev" onclick="lbNav(-1)">&#8249;</button><img id="lbImg" src="" alt=""/><button class="lb-arrow lb-next" onclick="lbNav(1)">&#8250;</button><div class="lb-counter" id="lbCount"></div></div>
+<script src="nav.js"></script>
+</body></html>

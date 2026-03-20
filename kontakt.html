@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Kontakt – Etraktor, s.r.o.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav id="mainNav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><img src="images/logo.jpg" alt="logo" class="nav-logo-img"/><span class="nav-logo-text">Etraktor<span class="nav-logo-sub">, s.r.o.</span></span></a>
+  <div class="nav-links"><a href="index.html">Domov</a><a href="palety.html">Transportné palety</a><a href="zariadenia.html">Jednoúčelové zariadenia</a><a href="vyroba.html">Výroba</a><a href="produkty.html">Vlastné produkty</a><a href="kontakt.html" class="nav-cta active">Kontakt</a></div>
+  <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Domov</a><a href="palety.html">Transportné palety</a><a href="zariadenia.html">Jednoúčelové zariadenia</a><a href="vyroba.html">Výroba</a><a href="produkty.html">Vlastné produkty</a><a href="kontakt.html">Kontakt</a></div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="tag">Spojme sa</span>
+    <h1>Kontaktujte nás</h1>
+    <p>Ozvite sa nám &ndash; radi preberieme Vaše požiadavky a navrhneme riešenie.</p>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <h2 class="section-title">Kontaktné údaje</h2>
+        <div class="contact-info-item">
+          <div class="ci-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <div class="ci-label">Kontaktná osoba</div>
+            <div class="ci-value">Ing. Rastislav Tribula, PhD</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <div class="ci-label">Sídlo spoločnosti</div>
+            <div class="ci-value">Duklianska 1376/17<br/>08501 Bardejov<br/>Slovenská republika</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="ci-label">Telefón</div>
+            <div class="ci-value"><a href="tel:+421907933648">+421 907 933 648</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value"><a href="mailto:info@etraktor.sk">info@etraktor.sk</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div>
+            <div class="ci-label">Web</div>
+            <div class="ci-value"><a href="https://www.etraktor.sk" target="_blank">www.etraktor.sk</a></div>
+          </div>
+        </div>
+        <div style="background:var(--bg);border-radius:12px;padding:1.5rem;border:1px solid var(--border);margin-top:1rem;">
+          <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:0.75rem;">Firemné údaje</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;">
+            <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted);">IČO</span><strong>52134539</strong></div>
+            <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted);">DIČ</span><strong>2120911815</strong></div>
+            <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted);">Zápis</span><strong>2019</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:800;text-transform:uppercase;margin-bottom:1.5rem;color:var(--blue-dark);">Odoslať správu</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Meno a priezvisko</label><input type="text" placeholder="Vaše meno"/></div>
+          <div class="form-group"><label>Telefón</label><input type="tel" placeholder="+421 ..."/></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="vas@email.sk"/></div>
+        <div class="form-group">
+          <label>Oblasť záujmu</label>
+          <select>
+            <option value="">Vyberte oblasť...</option>
+            <option>Elektrický malotraktor ET 2000</option>
+            <option>Elektrický malotraktor ET 3000</option>
+            <option>Príslušenstvo k malotraktoru</option>
+            <option>Transportné palety</option>
+            <option>Jednoúčelové zariadenia</option>
+            <option>Výroba / CNC pálenie / ohýbanie</option>
+            <option>Iné</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Správa</label><textarea placeholder="Popíšte Vašu požiadavku..."></textarea></div>
+        <button class="form-submit" id="formBtn" onclick="handleForm(event)">Odoslať dopyt</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="refs-section">
+  <div class="container">
+    <span class="tag">Dôvera</span><h2 class="section-title">Referencie</h2>
+    <p class="section-desc">Spolupracujeme s rešpektovanými inštitúciami a spoločnosťami.</p>
+    <div class="refs-logos">
+      <div class="ref-logo"><img src="images/image17.png" alt="Strojnícka fakulta TU Košice"/></div>
+      <div class="ref-logo"><img src="images/image18.png" alt="PIAFA Vyškov"/></div>
+      <div class="ref-logo"><img src="images/image19.png" alt="Žilinská Univerzita"/></div>
+      <div class="ref-logo"><img src="images/image20.png" alt="Referencia 4"/></div>
+      <div class="ref-logo"><img src="images/image21.png" alt="Referencia 5"/></div>
+      <div class="ref-logo"><img src="images/image22.png" alt="Referencia 6"/></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="container footer-inner">
+  <div class="footer-logo"><img src="images/logo.jpg" alt="logo" style="height:44px;"/><span>Etraktor, s.r.o.</span></div>
+  <div class="footer-links"><a href="index.html">Domov</a><a href="palety.html">Palety</a><a href="zariadenia.html">Zariadenia</a><a href="vyroba.html">Výroba</a><a href="produkty.html">Produkty</a><a href="kontakt.html">Kontakt</a></div>
+  <div class="footer-copy">&copy; 2025 Etraktor, s.r.o. &bull; Duklianska 1376/17, 08501 Bardejov</div>
+</div></footer>
+
+<script src="nav.js"></script>
+</body></html>

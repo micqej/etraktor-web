@@ -1,9 +1,4 @@
 {
-  "version": 2,
-  "rewrites": [
-    {
-      "source": "/img/:path*",
-      "destination": "https://www.etraktor.sk/images/:path*"
-    }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
