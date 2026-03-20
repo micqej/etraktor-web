@@ -35,7 +35,7 @@ nav#mainNav{
 }
 .nav-inner{max-width:1180px;margin:0 auto;padding:0 2rem;height:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
 .nav-logo{display:flex;align-items:center;gap:10px;}
-.nav-logo-img{height:40px;width:40px;object-fit:contain;border-radius:50%;border:2px solid var(--border);}
+.nav-logo-img{height:50px;width:50px;object-fit:contain;border-radius:50%;border:2px solid var(--border);}
 .nav-logo-text{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;color:var(--green-dark);letter-spacing:-0.5px;}
 .nav-logo-sub{font-weight:400;font-size:0.95rem;color:var(--text-muted);}
 .nav-links{display:flex;align-items:center;gap:0;}
@@ -291,3 +291,24 @@ section.green-dark .tag{background:rgba(255,255,255,0.12);border-color:rgba(255,
   .footer-links{justify-content:center;}
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
 }
+
+/* Logo text hidden - logo only */
+.nav-logo-text { display: none !important; }
+
+/* VIDEO SLIDER */
+.vslider-outer{position:relative;overflow:hidden;background:#111;}
+.vslider-track-outer{overflow:hidden;}
+.vslider-track{display:flex;transition:transform 0.45s cubic-bezier(0.25,0.1,0.25,1);}
+.vslide{min-width:100%;padding:0 120px;box-sizing:border-box;}
+.vslide-title{text-align:center;color:rgba(255,255,255,0.85);font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;letter-spacing:1.5px;padding:1.2rem 0 0.8rem;}
+.vslide-iframe-wrap{position:relative;padding-bottom:52%;height:0;overflow:hidden;border-radius:10px;}
+.vslide-iframe-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.vslider-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(45,122,58,0.9);border:none;color:white;font-size:2.2rem;width:56px;height:56px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.vslider-arrow:hover{background:var(--green-dark);transform:translateY(-50%) scale(1.08);}
+.vslider-prev{left:1.5rem;}
+.vslider-next{right:1.5rem;}
+.vdots{display:flex;gap:8px;justify-content:center;padding:1.2rem 0 0.5rem;background:#111;}
+.vdot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;border:none;transition:all 0.2s;}
+.vdot-active{background:var(--green-light);transform:scale(1.3);}
+@media(max-width:768px){.vslide{padding:0 54px;}.vslider-arrow{width:44px;height:44px;font-size:1.8rem;}}
+@media(max-width:480px){.vslide{padding:0 40px;}.vslider-arrow{width:36px;height:36px;}}
