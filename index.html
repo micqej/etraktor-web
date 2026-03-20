@@ -1,194 +1,1040 @@
-ETRAKTOR.SK
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eTRAKTOR.sk – Elektrický Malotraktor ET 2000</title>
+  <meta name="description" content="Elektrický malotraktor ET 2000 – nulové emisie, tichá prevádzka, 90% účinnosť motora. Moderná alternatíva k spaľovacím motorom. Žilina, Slovensko." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #2d7a3a;
+      --green-dark: #1e5228;
+      --green-light: #4caf50;
+      --green-pale: #e8f5e9;
+      --accent: #f5a623;
+      --text: #1a1a1a;
+      --text-muted: #555;
+      --bg: #f9f9f7;
+      --white: #ffffff;
+      --border: #e0e0d8;
+      --shadow: 0 4px 24px rgba(0,0,0,0.10);
+      --radius: 12px;
+    }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { scroll-behavior: smooth; }
 
-ELEKTRICKÝ MALOTRAKTOR ET 2000
-TRAKTOR, KTORÝ ŠETRÍ
-PEŇAŽENKU
-AJ PLANÉTU
-Nulové emisie, tichá prevádzka a minimálne prevádzkové náklady. Moderná alternatíva k spaľovacím motorom pre záhradu, poľnohospodárstvo aj priemysel.
-90%
-ÚČINNOSŤ MOTORA
-0
-LOKÁLNE EMISIE
-66 dBA
-HLADINA HLUKU
-Dopytovať cenu Zistiť viac
-PREČO ELEKTRICKÝ?
-INTELIGENTNEJŠÍ POHON PRE MODERNÉ HOSPODÁRSTVO
-Elektrický malotraktor dosahuje až 90% účinnosť využitia energie. Spaľovacie motory sa pohybujú na 15–20%. Menej porúch, žiadne výfukové plyny, nižšie náklady.
-Elektrický motor ET 2000
-90%
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-Spaľovací motor (benzín/nafta)
-15–20%
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 1.5rem;
+      color: var(--green-dark);
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--green-light); }
+    .nav-links { display: flex; gap: 0.2rem; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: var(--text-muted);
+      font-size: 0.82rem; font-weight: 500;
+      padding: 6px 10px; border-radius: 6px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--green); background: var(--green-pale); }
+    .nav-cta {
+      background: var(--green) !important; color: white !important;
+      padding: 8px 18px !important; border-radius: 8px !important;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--green-dark) !important; }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 8px; border: none; background: none;
+    }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: white; border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem; flex-direction: column; gap: 0.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { text-decoration: none; color: var(--text); padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
 
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e5228 0%, #2d7a3a 50%, #3a8f47 100%);
+      display: flex; flex-direction: column;
+      padding-top: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    #home::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('https://www.etraktor.sk/images/elektricky-malotraktor.jpg') center/cover no-repeat;
+      opacity: 0.18;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .hero-text { color: white; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 20px; margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 1.0; letter-spacing: -1px; margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    .hero-title em { color: var(--accent); font-style: normal; }
+    .hero-subtitle {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 600; opacity: 0.85; margin-bottom: 1.5rem;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .hero-desc { font-size: 1rem; opacity: 0.8; max-width: 480px; margin-bottom: 2.5rem; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block; text-decoration: none;
+      background: var(--accent); color: #1a1a1a;
+      font-weight: 700; font-size: 0.95rem;
+      padding: 14px 32px; border-radius: 8px;
+      transition: all 0.2s; border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: #e09500; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    .btn-outline {
+      display: inline-block; text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.5); color: white;
+      font-weight: 600; font-size: 0.95rem;
+      padding: 12px 30px; border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+    .hero-image { position: relative; }
+    .hero-image img {
+      width: 100%; max-width: 520px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      display: block; margin: 0 auto;
+    }
+    .hero-stats {
+      position: relative; z-index: 2;
+      background: rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+    }
+    .hero-stats-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      padding: 2rem;
+    }
+    .stat-item {
+      text-align: center; color: white;
+      padding: 1rem; border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.8rem; font-weight: 900; line-height: 1;
+      color: var(--accent);
+    }
+    .stat-label { font-size: 0.78rem; font-weight: 500; opacity: 0.7; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
 
-VYSOKÝ VÝKON
-Maximálny záberový moment od nulových otáčok. Plynulá regulácia 0–15 km/h.
+    /* ── SECTION COMMONS ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase; color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800; letter-spacing: -0.5px; line-height: 1.1;
+      text-transform: uppercase; margin-bottom: 1rem; color: var(--text);
+    }
+    .section-desc { font-size: 1rem; color: var(--text-muted); max-width: 560px; line-height: 1.7; margin-bottom: 3rem; }
 
-TICHÁ PREVÁDZKA
-Len 66 dBA – vhodný do obytných zón, uzavretých priestorov a interiérov.
+    /* ── WHY ELECTRIC ── */
+    #preco { background: white; }
+    .why-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    .why-img { position: relative; }
+    .why-img img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .why-badge-float {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--green); color: white;
+      border-radius: 12px; padding: 1.2rem 1.5rem; text-align: center;
+      box-shadow: 0 8px 24px rgba(45,122,58,0.4);
+    }
+    .why-badge-float .big { font-family: 'Barlow Condensed', sans-serif; font-size: 2.5rem; font-weight: 900; line-height: 1; }
+    .why-badge-float .small { font-size: 0.72rem; font-weight: 600; opacity: 0.85; text-transform: uppercase; letter-spacing: 1px; }
+    .features-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;
+    }
+    .feature-card {
+      background: var(--green-pale); border-radius: var(--radius);
+      padding: 1.5rem; border: 1px solid #c8e6c9;
+      transition: all 0.2s;
+    }
+    .feature-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .feature-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .feature-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--green-dark); }
+    .feature-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
 
-NULOVÉ EMISIE
-Žiadne miestne emisie z výfuku. Ideálny pre sklady, skleníky aj verejné priestory.
+    /* Efficiency bar */
+    .efficiency-section { margin-top: 2.5rem; }
+    .eff-label { font-weight: 600; font-size: 0.9rem; margin-bottom: 1.2rem; color: var(--text-muted); }
+    .eff-item { margin-bottom: 1.2rem; }
+    .eff-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .eff-name { font-size: 0.9rem; font-weight: 500; }
+    .eff-pct { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--green); }
+    .eff-bar-bg { background: #e0e0e0; border-radius: 4px; height: 10px; overflow: hidden; }
+    .eff-bar { height: 100%; border-radius: 4px; transition: width 1.5s ease; }
+    .eff-bar.green { background: linear-gradient(90deg, var(--green), var(--green-light)); }
+    .eff-bar.gray { background: #9e9e9e; }
 
-NÍZKA ÚDRŽBA
-Elektromotor má minimum pohyblivých dielov. Bez oleja, filtrov a výfukového systému.
+    /* ── PARAMS ── */
+    #parametre { background: var(--bg); }
+    .params-img-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;
+    }
+    .params-img-row img {
+      width: 100%; border-radius: var(--radius); box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+    .params-img-row img:hover { transform: scale(1.03); }
+    .params-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .tab-btn {
+      border: 2px solid var(--border); background: white; color: var(--text-muted);
+      font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 0.85rem;
+      padding: 10px 22px; border-radius: 8px; cursor: pointer; transition: all 0.2s;
+    }
+    .tab-btn.active, .tab-btn:hover { background: var(--green); border-color: var(--green); color: white; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .params-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .params-table tr:nth-child(even) { background: white; }
+    .params-table tr:nth-child(odd) { background: var(--green-pale); }
+    .params-table th { background: var(--green-dark); color: white; padding: 12px 16px; text-align: left; font-size: 0.8rem; letter-spacing: 0.5px; }
+    .params-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+    .params-table td:first-child { font-weight: 500; }
 
-REKUPERÁCIA
-90% brzdenia zabezpečuje elektromotor, ktorý spätne dobíja akumulátory.
+    /* ── DOJAZD ── */
+    #dojazd { background: white; }
+    .dojazd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .dojazd-card {
+      border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+      border: 1px solid var(--border); transition: transform 0.3s;
+    }
+    .dojazd-card:hover { transform: translateY(-4px); }
+    .dojazd-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .dojazd-card-body { padding: 1.5rem; }
+    .dojazd-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--green-dark);
+    }
+    .dojazd-badges { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .dojazd-badge {
+      background: var(--green-pale); border: 1px solid #c8e6c9;
+      color: var(--green-dark); font-size: 0.8rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 20px; display: flex; align-items: center; gap: 5px;
+    }
+    .badge-tag {
+      background: var(--green); color: white; font-size: 0.7rem; font-weight: 700;
+      padding: 2px 8px; border-radius: 10px; margin-left: 6px;
+    }
+    .dojazd-card-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
 
-NÍZKE NÁKLADY
-Výrazne nižšie prevádzkové náklady oproti benzínovým a naftovým alternatívam.
-TECHNICKÉ PARAMETRE
-ET 2000 — ŠPECIFIKÁCIE
-Kompletné technické parametre v dvoch konfiguráciách akumulátorov.
-ZÁKLADNÉ
-BATÉRIE
-NABÍJANIE
-ROZMERY
-PARAMETER
-2×12V DC
-4×12V DC
-Typ zariadenia
-ET 2000
-Typ pohonu
-Samonosná tuhá náprava s diferenciálom
-Rýchlosť vpred / vzad
-0–15 km/h / 0–7 km/h
-Najmenší priemer otáčania
-6,5 m
-Hmotnosť traktora
-380 kg
-480 kg
-Max. ťahaný náklad
-300 kg / 1 300 kg*
-400 kg / 1 300 kg*
-Max. celková hmotnosť
-680 kg / 1 680 kg*
-880 kg
-Max. ťažná sila (asfalt)
-2 800 N
-3 650 N
-Brodenie
-150 mm pri 5 km/h
-Max. sklon povrchu
-10° (17%)
-Max. veľkosť prekážky
-120 mm
-Prevádzková teplota
-−5°C až +40°C
-Prevádzková vlhkosť
-30–80% (bez kondenzácie)
-Hladina akustického tlaku
-66 dBA
-* sklon podlahy 0°, max. rýchlosť 7 km/h
-DOJAZD
-DOJAZD MALOTRAKTORA
-Kapacita batérií a dojazd závisí od konfigurácie a spôsobu nasadenia.
-￼
-KONFIGURÁCIA 2×12V DC
-Štandardná konfigurácia, hmotnosť 380 kg, kapacita 158 Ah.
-380 KG
-158 AH
-ŠTANDARD
-￼
-KONFIGURÁCIA 4×12V DC
-Rozšírená kapacita pre náročné nasadenie – 480 kg, 316 Ah.
-480 KG
-316 AH
-OPCIA
-PRÍSLUŠENSTVO
-BOHATÉ PRÍSLUŠENSTVO
-ET 2000 podporuje široké spektrum príslušenstva pre záhradu, poľnohospodárstvo aj priemysel.
-￼
-PREDNÁ RADLICA NA SNEH
-Robustné prevedenie s výmenným gumovým britom. Nastaviteľný uhol ±15° a ±30°. Výklopný mechanizmus proti poškodeniu.
-￼
-ZADNÝ ZÁVES
-Univerzálny zadný záves pre uchytenie a zdvíhanie pasívneho príslušenstva — pluh, vyorávač zemiakov, brány a ďalšie.
-￼
-KOMPLETNÝ SORTIMENT
-Jarkovače, hrobkovače, vyorávače, oborávacie kolesá, pasívne kypriče, plečky, vlečky, valce a ďalšie.
-KOMFORT A VÝBAVA
-VÝBAVA ELEKTRICKÉHO MALOTRAKTORA
-Prehľad štandardnej a voliteľnej výbavy modelu ET 2000.
-VÝKON AKUMULÁTOROV
-2×12V DC – 158 Ah
-ŠTANDARD
-4×12V DC – 316 Ah
-OPCIA
-Nabíjačka HAWKER 24V / 40A
-OPCIA
-BEZPEČNOSŤ
-Kotúčové brzdy na prednej náprave
-ŠTANDARD
-Batériový konektor
-ŠTANDARD
-Elektrická parkovacia brzda
-ŠTANDARD
-Svetlá + smerovky
-ŠTANDARD
-Výstražná trúba
-ŠTANDARD
-Maják
-OPCIA
-KOMFORT
-Odprúžené sedadlo s opierkami
-ŠTANDARD
-Spätné zrkadlá
-ŠTANDARD
-Informačný display
-ŠTANDARD
-Rádio FM/MP3 + 2 reproduktory
-OPCIA
-Kabína so stieračom a ostrekovačom
-OPCIA
-INÁ VÝBAVA
-Elektrická zásuvka prívesného vozíka
-ŠTANDARD
-Ťažná guľa 50 mm
-OPCIA
-Hydraulické čerpadlo 380 bar / 12 cm³
-OPCIA
-Napäťový konektor pre príslušenstvo 50A
-OPCIA
-￼
-￼
-￼
-GALÉRIA
-ET 2000 V AKCII
-Elektrický malotraktor pri rôznorodej práci — záhrada, terén, príslušenstvo.
+    /* ── PRÍSLUŠENSTVO ── */
+    #prislusenstvo { background: var(--bg); }
+    .pris-main-img { margin-bottom: 3rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .pris-main-img img { width: 100%; max-height: 360px; object-fit: cover; display: block; }
+    .pris-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .pris-card {
+      background: white; border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); border: 1px solid var(--border); transition: transform 0.3s;
+    }
+    .pris-card:hover { transform: translateY(-4px); }
+    .pris-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .pris-card-body { padding: 1.5rem; }
+    .pris-card-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; color: var(--green-dark); }
+    .pris-card-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; }
 
-CERTIFIKÁTY
-CERTIFIKOVANÉ ZARIADENIE
-Elektrický malotraktor ET 2000 spĺňa všetky relevantné certifikačné normy.
-￼
-￼
-CENNÍK
-ZÍSKAJTE CENOVÚ PONUKU
-Aktuálny cenník elektrického malotraktora ET 2000 vám radi poskytneme na vyžiadanie. Cena závisí od zvolenej konfigurácie akumulátorov a príslušenstva.
-Napísať email
-KONTAKTY
-KONTAKTUJTE NÁS
+    /* ── VÝBAVA ── */
+    #komfort { background: white; }
+    .komfort-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+    .komfort-table-wrap { overflow-x: auto; }
+    .komfort-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .komfort-table tr:nth-child(even) { background: var(--green-pale); }
+    .komfort-table th { background: var(--green-dark); color: white; padding: 10px 14px; text-align: left; font-size: 0.78rem; }
+    .komfort-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+    .komfort-table .group-row td { background: var(--green); color: white; font-weight: 700; font-size: 0.78rem; letter-spacing: 1px; text-transform: uppercase; }
+    .badge-std { background: #e8f5e9; color: var(--green-dark); font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+    .badge-opt { background: #fff3e0; color: #e65100; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+    .komfort-images { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .komfort-images img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .komfort-images img:first-child { grid-column: 1 / -1; }
 
-KONTAKTNÁ OSOBA
-Ing. Rastislav Tribula, PhD
+    /* ── CERTIFIKÁTY ── */
+    #certifikaty { background: var(--bg); }
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 700px; }
+    .cert-card {
+      background: white; border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); border: 1px solid var(--border);
+      transition: transform 0.3s; cursor: pointer;
+    }
+    .cert-card:hover { transform: scale(1.02); }
+    .cert-card img { width: 100%; height: 280px; object-fit: contain; padding: 1rem; display: block; }
 
-ADRESA
-Fedora Ruppeldta 1295/18 010 01 Žilina, Slovenská republika
+    /* ── GALÉRIA ── */
+    #galeria { background: white; }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 0.75rem;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden; border-radius: 10px;
+      cursor: pointer; aspect-ratio: 1;
+    }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.4s;
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+      opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay-icon { color: white; font-size: 1.5rem; }
 
-TELEFÓN
-+421 907 933 648
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.93); display: none;
+      align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 8px; object-fit: contain; }
+    .lightbox-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      background: rgba(255,255,255,0.15); border: none; color: white;
+      font-size: 1.8rem; cursor: pointer; width: 44px; height: 44px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.3); }
+    .lightbox-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.12); border: none; color: white;
+      font-size: 2rem; cursor: pointer; width: 52px; height: 52px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .lightbox-arrow:hover { background: rgba(255,255,255,0.25); }
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
+    .lightbox-counter {
+      position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.7); font-size: 0.85rem;
+    }
 
-EMAIL
-[email protected]
+    /* ── CENNÍK ── */
+    #cennik {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+      color: white;
+    }
+    .cennik-card {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px); border-radius: 20px;
+      padding: 3rem; max-width: 700px; margin: 0 auto; text-align: center;
+    }
+    .cennik-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .cennik-desc { opacity: 0.85; margin-bottom: 2rem; font-size: 1rem; line-height: 1.7; }
+    .cennik-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .cennik-btns a {
+      display: inline-block; text-decoration: none;
+      background: white; color: var(--green-dark);
+      font-weight: 700; padding: 14px 32px; border-radius: 10px; transition: all 0.2s;
+    }
+    .cennik-btns a:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .cennik-btns a.outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
+    .cennik-btns a.outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
 
-WEB
-www.etraktor.sk
+    /* ── KONTAKT ── */
+    #kontakty { background: var(--bg); }
+    .kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .kontakt-info h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .kontakt-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start; }
+    .kontakt-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .kontakt-label { font-size: 0.75rem; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+    .kontakt-value { font-size: 0.95rem; font-weight: 500; color: var(--text); }
+    .kontakt-value a { color: var(--green); text-decoration: none; }
+    .kontakt-form { background: white; border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow); }
+    .kontakt-form h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--green-dark); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; border: 2px solid var(--border); border-radius: 8px;
+      padding: 11px 14px; font-family: 'Barlow', sans-serif; font-size: 0.95rem;
+      background: var(--bg); color: var(--text); transition: border 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--green);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      width: 100%; background: var(--green); color: white;
+      border: none; border-radius: 8px; padding: 14px;
+      font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 1rem;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .form-submit:hover { background: var(--green-dark); transform: translateY(-1px); }
 
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark); color: rgba(255,255,255,0.7);
+      padding: 2rem; text-align: center; font-size: 0.85rem;
+    }
+    footer a { color: rgba(255,255,255,0.85); text-decoration: none; }
+    footer a:hover { color: white; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-content { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+      .hero-image { order: -1; }
+      .hero-desc, .hero-btns { margin-left: auto; margin-right: auto; }
+      .hero-btns { justify-content: center; }
+      .why-grid, .komfort-grid, .kontakt-grid { grid-template-columns: 1fr; }
+      .why-badge-float { right: 0; bottom: -10px; }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 1; aspect-ratio: 1; }
+      .dojazd-grid { grid-template-columns: 1fr; }
+      .params-img-row { grid-template-columns: 1fr; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .hero-stats-inner { grid-template-columns: 1fr; gap: 0; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .stat-item:last-child { border-bottom: none; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 3rem 1.2rem; }
+      .features-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .komfort-images { grid-template-columns: 1fr; }
+      .komfort-images img:first-child { grid-column: auto; }
+      .pris-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
 
-Odoslať správu
-© 2024  ·  www.etraktor.sk  ·  Elektrický malotraktor ET 2000  ·  Žilina, Slovenská republika
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">e<span>TRAKTOR</span>.sk</a>
+  <div class="nav-links">
+    <a href="#preco">Prečo elektrický</a>
+    <a href="#parametre">Parametre</a>
+    <a href="#dojazd">Dojazd</a>
+    <a href="#prislusenstvo">Príslušenstvo</a>
+    <a href="#komfort">Výbava</a>
+    <a href="#galeria">Galéria</a>
+    <a href="#kontakty" class="nav-cta">Kontakt</a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#preco" onclick="toggleMenu()">Prečo elektrický</a>
+  <a href="#parametre" onclick="toggleMenu()">Technické parametre</a>
+  <a href="#dojazd" onclick="toggleMenu()">Dojazd</a>
+  <a href="#prislusenstvo" onclick="toggleMenu()">Príslušenstvo</a>
+  <a href="#komfort" onclick="toggleMenu()">Komfort a výbava</a>
+  <a href="#certifikaty" onclick="toggleMenu()">Certifikáty</a>
+  <a href="#galeria" onclick="toggleMenu()">Galéria</a>
+  <a href="#cennik" onclick="toggleMenu()">Cenník</a>
+  <a href="#kontakty" onclick="toggleMenu()">Kontakt</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">🌱 Elektrický Malotraktor ET 2000</div>
+      <h1 class="hero-title">Traktor, ktorý<br/>šetrí <em>peňaženku</em><br/>aj planétu</h1>
+      <p class="hero-subtitle">Nulové emisie · Tichá prevádzka · Nízke náklady</p>
+      <p class="hero-desc">Moderná alternatíva k spaľovacím motorom pre záhradu, poľnohospodárstvo aj priemysel. Elektrický motor s 90% účinnosťou a minimálnou údržbou.</p>
+      <div class="hero-btns">
+        <a href="#kontakty" class="btn-primary">Dopytovať cenu</a>
+        <a href="#parametre" class="btn-outline">Technické parametre</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://www.etraktor.sk/images/elektricky-malotraktor.jpg" alt="Elektrický malotraktor ET 2000" />
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="stat-item">
+        <div class="stat-value">90%</div>
+        <div class="stat-label">Účinnosť motora</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Lokálnych emisií</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">66 dBA</div>
+        <div class="stat-label">Hladina hluku</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREČO ELEKTRICKÝ -->
+<section id="preco">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-img">
+        <img src="https://www.etraktor.sk/images/parametre.png" alt="Technické parametre elektrického malotraktora" />
+        <div class="why-badge-float">
+          <div class="big">90%</div>
+          <div class="small">Účinnosť<br/>elektromotora</div>
+        </div>
+      </div>
+      <div>
+        <span class="section-tag">Inteligentnejší pohon</span>
+        <h2 class="section-title">Prečo elektrický?</h2>
+        <p class="section-desc">Elektrický malotraktor dosahuje až 90% účinnosť využitia energie. Spaľovacie motory sa pohybujú na 15–20%. Menej porúch, žiadne výfukové plyny, nižšie náklady.</p>
+
+        <div class="efficiency-section">
+          <div class="eff-label">Porovnanie účinnosti pohonu</div>
+          <div class="eff-item">
+            <div class="eff-row">
+              <span class="eff-name">Elektrický motor ET 2000</span>
+              <span class="eff-pct" style="color:var(--green)">90%</span>
+            </div>
+            <div class="eff-bar-bg"><div class="eff-bar green" style="width:90%"></div></div>
+          </div>
+          <div class="eff-item">
+            <div class="eff-row">
+              <span class="eff-name">Spaľovací motor (benzín/nafta)</span>
+              <span class="eff-pct" style="color:#9e9e9e">15–20%</span>
+            </div>
+            <div class="eff-bar-bg"><div class="eff-bar gray" style="width:18%"></div></div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <div class="feature-title">Vysoký výkon</div>
+            <div class="feature-desc">Maximálny záberový moment od nulových otáčok. Plynulá regulácia 0–15 km/h.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔇</div>
+            <div class="feature-title">Tichá prevádzka</div>
+            <div class="feature-desc">Len 66 dBA – vhodný do obytných zón, uzavretých priestorov a interiérov.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌿</div>
+            <div class="feature-title">Nulové emisie</div>
+            <div class="feature-desc">Žiadne miestne emisie z výfuku. Ideálny pre sklady, skleníky aj verejné priestory.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔋</div>
+            <div class="feature-title">Rekuperácia energie</div>
+            <div class="feature-desc">90% brzdenia zabezpečuje elektromotor, ktorý spätne dobíja akumulátory.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICKÉ PARAMETRE -->
+<section id="parametre">
+  <div class="container">
+    <span class="section-tag">ET 2000 — Špecifikácie</span>
+    <h2 class="section-title">Technické parametre</h2>
+    <p class="section-desc">Kompletné technické parametre v dvoch konfiguráciách akumulátorov.</p>
+
+    <div class="params-img-row">
+      <img src="https://www.etraktor.sk/images/rozmerythumb1.png" alt="Elektrický malotraktor rozmery – pohľad 1" />
+      <img src="https://www.etraktor.sk/images/rozmerythumb2.png" alt="Elektrický malotraktor rozmery – pohľad 2" />
+      <img src="https://www.etraktor.sk/images/rozmerythumb3.png" alt="Elektrický malotraktor rozmery – pohľad 3" />
+    </div>
+
+    <div class="params-tabs">
+      <button class="tab-btn active" onclick="showTab('zakladne')">Základné</button>
+      <button class="tab-btn" onclick="showTab('baterie')">Batérie</button>
+      <button class="tab-btn" onclick="showTab('nabijanie')">Nabíjanie</button>
+    </div>
+
+    <div id="tab-zakladne" class="tab-content active">
+      <table class="params-table">
+        <thead><tr><th>Parameter</th><th>2×12V DC</th><th>4×12V DC</th></tr></thead>
+        <tbody>
+          <tr><td>Typ zariadenia</td><td colspan="2">ET 2000</td></tr>
+          <tr><td>Typ pohonu</td><td colspan="2">Samonosná tuhá náprava s diferenciálom</td></tr>
+          <tr><td>Rýchlosť vpred / vzad</td><td colspan="2">0–15 km/h / 0–7 km/h</td></tr>
+          <tr><td>Najmenší priemer otáčania</td><td colspan="2">6,5 m</td></tr>
+          <tr><td>Hmotnosť traktora</td><td>380 kg</td><td>480 kg</td></tr>
+          <tr><td>Max. ťahaný náklad</td><td>300 kg / 1 300 kg*</td><td>400 kg / 1 300 kg*</td></tr>
+          <tr><td>Max. celková hmotnosť</td><td>680 kg / 1 680 kg*</td><td>880 kg</td></tr>
+          <tr><td>Max. ťažná sila (asfalt)</td><td>2 800 N</td><td>3 650 N</td></tr>
+          <tr><td>Brodenie</td><td colspan="2">150 mm pri 5 km/h</td></tr>
+          <tr><td>Max. sklon povrchu</td><td colspan="2">10° (17%)</td></tr>
+          <tr><td>Max. veľkosť prekážky</td><td colspan="2">120 mm</td></tr>
+          <tr><td>Prevádzková teplota</td><td colspan="2">−5°C až +40°C</td></tr>
+          <tr><td>Prevádzková vlhkosť</td><td colspan="2">30–80% (bez kondenzácie)</td></tr>
+          <tr><td>Hladina akustického tlaku</td><td colspan="2">66 dBA</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.75rem;">* sklon podlahy 0°, max. rýchlosť 7 km/h</p>
+    </div>
+
+    <div id="tab-baterie" class="tab-content">
+      <table class="params-table">
+        <thead><tr><th>Parameter</th><th>2×12V DC</th><th>4×12V DC</th></tr></thead>
+        <tbody>
+          <tr><td>Typ batérií</td><td colspan="2">Hawker XFC – trakčné (bez údržby)</td></tr>
+          <tr><td>Kapacita</td><td>158 Ah</td><td>316 Ah</td></tr>
+          <tr><td>Hmotnosť konfigu.</td><td>380 kg</td><td>480 kg</td></tr>
+          <tr><td>Životnosť cyklov (60% vybitie)</td><td colspan="2">1 200 ZVEI cyklov</td></tr>
+          <tr><td>Životnosť cyklov (80% vybitie)</td><td colspan="2">800 cyklov</td></tr>
+          <tr><td>Menovitá prevádzková teplota</td><td colspan="2">30°C</td></tr>
+          <tr><td>Max. prevádzková teplota</td><td colspan="2">45°C</td></tr>
+          <tr><td>Doplňovanie destilovanej vody</td><td colspan="2">Nie je potrebné</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="tab-nabijanie" class="tab-content">
+      <table class="params-table">
+        <thead><tr><th>Parameter</th><th>Hodnota</th></tr></thead>
+        <tbody>
+          <tr><td>Typ nabíjačky</td><td>Hawker XFC schválená nabíjačka</td></tr>
+          <tr><td>Vstupné napätie</td><td>240V AC (sieť)</td></tr>
+          <tr><td>Výstupné napätie</td><td>24V DC</td></tr>
+          <tr><td>Prúd nabíjačky (opcia)</td><td>40A</td></tr>
+          <tr><td>Nabíjanie počas prevádzky</td><td>Kdekoľvek – bez poškodenia batérií</td></tr>
+          <tr><td>Odporúčané skladovanie batérií</td><td>Plne nabité, 20°C, sucho</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:2rem;">
+        <img src="https://www.etraktor.sk/images/nabijanie.png" alt="Nabíjanie elektrického malotraktora" style="max-width:400px;border-radius:var(--radius);box-shadow:var(--shadow);" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOJAZD -->
+<section id="dojazd">
+  <div class="container">
+    <span class="section-tag">Kapacita a výdrž</span>
+    <h2 class="section-title">Dojazd malotraktora</h2>
+    <p class="section-desc">Kapacita batérií a dojazd závisí od konfigurácie a spôsobu nasadenia.</p>
+    <div class="dojazd-grid">
+      <div class="dojazd-card">
+        <img src="https://www.etraktor.sk/images/dojazd1.jpg" alt="Konfigurácia 2×12V DC – dojazd" />
+        <div class="dojazd-card-body">
+          <div class="dojazd-card-title">Konfigurácia 2×12V DC</div>
+          <div class="dojazd-badges">
+            <span class="dojazd-badge">⚖️ 380 kg</span>
+            <span class="dojazd-badge">🔋 158 Ah</span>
+            <span class="badge-tag">ŠTANDARD</span>
+          </div>
+          <p class="dojazd-card-desc">Štandardná konfigurácia vhodná pre bežné záhradné a poľnohospodárske práce. Kompaktnejšia hmotnosť pre ľahší terén.</p>
+        </div>
+      </div>
+      <div class="dojazd-card">
+        <img src="https://www.etraktor.sk/images/dojazd2.jpg" alt="Konfigurácia 4×12V DC – dojazd" />
+        <div class="dojazd-card-body">
+          <div class="dojazd-card-title">Konfigurácia 4×12V DC</div>
+          <div class="dojazd-badges">
+            <span class="dojazd-badge">⚖️ 480 kg</span>
+            <span class="dojazd-badge">🔋 316 Ah</span>
+            <span class="badge-tag">OPCIA</span>
+          </div>
+          <p class="dojazd-card-desc">Rozšírená kapacita pre náročné nasadenie – priemysel, sklady, intenzívna poľnohospodárska prevádzka. Dvojnásobná kapacita batérií.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÍSLUŠENSTVO -->
+<section id="prislusenstvo">
+  <div class="container">
+    <span class="section-tag">Rozšírené možnosti</span>
+    <h2 class="section-title">Bohaté príslušenstvo</h2>
+    <p class="section-desc">ET 2000 podporuje široké spektrum príslušenstva pre záhradu, poľnohospodárstvo aj priemysel.</p>
+
+    <div class="pris-main-img">
+      <img src="https://www.etraktor.sk/images/prislusenstvosumar.jpg" alt="Kompletný sortiment príslušenstva elektrického malotraktora" />
+    </div>
+
+    <div class="pris-cards">
+      <div class="pris-card">
+        <img src="https://www.etraktor.sk/images/prislusenstvo.jpg" alt="Predná radlica na sneh" />
+        <div class="pris-card-body">
+          <div class="pris-card-title">Predná radlica na sneh</div>
+          <p class="pris-card-desc">Robustné prevedenie s výmenným gumovým britom. Nastaviteľný uhol ±15° a ±30°. Výklopný mechanizmus proti poškodeniu.</p>
+        </div>
+      </div>
+      <div class="pris-card">
+        <img src="https://www.etraktor.sk/images/zadnyzaves.png" alt="Zadný záves" />
+        <div class="pris-card-body">
+          <div class="pris-card-title">Zadný záves</div>
+          <p class="pris-card-desc">Univerzálny zadný záves pre uchytenie a zdvíhanie pasívneho príslušenstva — pluh, vyorávač zemiakov, brány a ďalšie.</p>
+        </div>
+      </div>
+      <div class="pris-card">
+        <img src="https://www.etraktor.sk/images/galeria/elektricky-malotraktor-07.JPG" alt="Radlica na sneh v akcii" />
+        <div class="pris-card-body">
+          <div class="pris-card-title">Kompletný sortiment</div>
+          <p class="pris-card-desc">Jarkovače, hrobkovače, vyorávače, oborávacie kolesá, pasívne kypriče, plečky, vlečky, valce a ďalšie.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KOMFORT A VÝBAVA -->
+<section id="komfort">
+  <div class="container">
+    <span class="section-tag">Výbava a konfigurácia</span>
+    <h2 class="section-title">Komfort a výbava</h2>
+    <p class="section-desc">Prehľad štandardnej a voliteľnej výbavy modelu ET 2000.</p>
+
+    <div class="komfort-grid">
+      <div class="komfort-table-wrap">
+        <table class="komfort-table">
+          <thead><tr><th>Vybavenie</th><th>Typ</th></tr></thead>
+          <tbody>
+            <tr class="group-row"><td colspan="2">Výkon akumulátorov</td></tr>
+            <tr><td>2×12V DC – 158 Ah</td><td><span class="badge-std">štandard</span></td></tr>
+            <tr><td>4×12V DC – 316 Ah</td><td><span class="badge-opt">opcia</span></td></tr>
+            <tr><td>Nabíjačka HAWKER 24V / 40A</td><td><span class="badge-opt">opcia</span></td></tr>
+            <tr class="group-row"><td colspan="2">Bezpečnosť</td></tr>
+            <tr><td>Kotúčové brzdy na prednej náprave</td><td><span class="badge-std">štandard</span></td></tr>
+            <tr><td>Batériový konektor</td><td><span class="badge-std">štandard</span></td></tr>
+            <tr><td>Elektrická parkovacia brzda</td><td><span class="badge-std">štandard</span></td></tr>
+            <tr><td>Svetlá + smerovky</td><td><span class="badge-std">štandard</span></td></tr>
+            <tr><td>Výstražná trúba</td><td><span class="badge-std">štandard</span></td></tr>
+            <tr><td>Maják</td><td><span class="badge-opt">opcia</span></td></tr>
+            <tr class="group-row"><td colspan="2">Komfort</td></tr>
+            <tr><td>Odprúžené sedadlo s opierkami</td><td><span class="badge-std">štandard</span></td></tr>
+            <tr><td>Spätné zrkadlá</td><td><span class="badge-std">štandard</span></td></tr>
+            <tr><td>Informačný display</td><td><span class="badge-std">štandard</span></td></tr>
+            <tr><td>Rádio FM/MP3 + 2 reproduktory</td><td><span class="badge-opt">opcia</span></td></tr>
+            <tr><td>Kabína so stieračom a ostrekovačom</td><td><span class="badge-opt">opcia</span></td></tr>
+            <tr class="group-row"><td colspan="2">Iná výbava</td></tr>
+            <tr><td>Elektrická zásuvka prívesného vozíka</td><td><span class="badge-std">štandard</span></td></tr>
+            <tr><td>Ťažná guľa 50 mm</td><td><span class="badge-opt">opcia</span></td></tr>
+            <tr><td>Hydraulické čerpadlo 380 bar / 12 cm³</td><td><span class="badge-opt">opcia</span></td></tr>
+            <tr><td>Napäťový konektor pre príslušenstvo 50A</td><td><span class="badge-opt">opcia</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="komfort-images">
+        <img src="https://www.etraktor.sk/images/prislusenstvo2.png" alt="Elektrický malotraktor – výbava" />
+        <img src="https://www.etraktor.sk/images/prislusenstvo3.png" alt="Elektrický malotraktor – detail" />
+        <img src="https://www.etraktor.sk/images/prislusenstvo4.png" alt="Elektrický malotraktor – kabína" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFIKÁTY -->
+<section id="certifikaty">
+  <div class="container">
+    <span class="section-tag">Normy a certifikácia</span>
+    <h2 class="section-title">Certifikované zariadenie</h2>
+    <p class="section-desc">Elektrický malotraktor ET 2000 spĺňa všetky relevantné certifikačné normy.</p>
+    <div class="cert-grid">
+      <div class="cert-card" onclick="openLightboxDirect('https://www.etraktor.sk/images/certifikat1.jpg')">
+        <img src="https://www.etraktor.sk/images/certifikat1.jpg" alt="Certifikát elektrického malotraktora 1" />
+      </div>
+      <div class="cert-card" onclick="openLightboxDirect('https://www.etraktor.sk/images/certifikat2.jpg')">
+        <img src="https://www.etraktor.sk/images/certifikat2.jpg" alt="Certifikát elektrického malotraktora 2" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALÉRIA -->
+<section id="galeria">
+  <div class="container">
+    <span class="section-tag">ET 2000 v akcii</span>
+    <h2 class="section-title">Galéria</h2>
+    <p class="section-desc">Elektrický malotraktor pri rôznorodej práci — záhrada, terén, príslušenstvo.</p>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- JS fills this -->
+    </div>
+  </div>
+</section>
+
+<!-- CENNÍK -->
+<section id="cennik">
+  <div class="container">
+    <div class="cennik-card">
+      <h2 class="cennik-title">Získajte cenovú ponuku</h2>
+      <p class="cennik-desc">Aktuálny cenník elektrického malotraktora ET 2000 vám radi poskytneme na vyžiadanie. Cena závisí od zvolenej konfigurácie akumulátorov a príslušenstva.</p>
+      <div class="cennik-btns">
+        <a href="mailto:info@etraktor.sk">Napísať email</a>
+        <a href="tel:+421907933648" class="outline">📞 +421 907 933 648</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakty">
+  <div class="container">
+    <span class="section-tag">Spojme sa</span>
+    <h2 class="section-title">Kontaktujte nás</h2>
+    <div class="kontakt-grid">
+      <div class="kontakt-info">
+        <h3>Kontaktná osoba</h3>
+        <div class="kontakt-item">
+          <div class="kontakt-icon">👤</div>
+          <div>
+            <div class="kontakt-label">Meno</div>
+            <div class="kontakt-value">Ing. Rastislav Tribula, PhD</div>
+          </div>
+        </div>
+        <div class="kontakt-item">
+          <div class="kontakt-icon">📍</div>
+          <div>
+            <div class="kontakt-label">Adresa</div>
+            <div class="kontakt-value">Fedora Ruppeldta 1295/18<br/>010 01 Žilina, Slovenská republika</div>
+          </div>
+        </div>
+        <div class="kontakt-item">
+          <div class="kontakt-icon">📞</div>
+          <div>
+            <div class="kontakt-label">Telefón</div>
+            <div class="kontakt-value"><a href="tel:+421907933648">+421 907 933 648</a></div>
+          </div>
+        </div>
+        <div class="kontakt-item">
+          <div class="kontakt-icon">✉️</div>
+          <div>
+            <div class="kontakt-label">Email</div>
+            <div class="kontakt-value"><a href="mailto:info@etraktor.sk">info@etraktor.sk</a></div>
+          </div>
+        </div>
+        <div class="kontakt-item">
+          <div class="kontakt-icon">🌐</div>
+          <div>
+            <div class="kontakt-label">Web</div>
+            <div class="kontakt-value"><a href="https://www.etraktor.sk" target="_blank">www.etraktor.sk</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kontakt-form">
+        <h3>Odoslať správu</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Meno</label>
+            <input type="text" placeholder="Vaše meno" />
+          </div>
+          <div class="form-group">
+            <label>Telefón</label>
+            <input type="tel" placeholder="+421 ..." />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="vas@email.sk" />
+        </div>
+        <div class="form-group">
+          <label>Záujem</label>
+          <select>
+            <option>Cenová ponuka – ET 2000</option>
+            <option>Technické informácie</option>
+            <option>Príslušenstvo</option>
+            <option>Iné</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Správa</label>
+          <textarea placeholder="Napíšte nám..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleFormSubmit(event)">Odoslať dopyt →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span>© 2025 · <a href="#home">eTRAKTOR.sk</a> · Elektrický malotraktor ET 2000 · Žilina, Slovenská republika</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="#home">Domov</a>
+      <a href="#parametre">Parametre</a>
+      <a href="#galeria">Galéria</a>
+      <a href="#kontakty">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <button class="lightbox-arrow lightbox-prev" onclick="lightboxNav(-1)">‹</button>
+  <img id="lightboxImg" src="" alt="Galéria" />
+  <button class="lightbox-arrow lightbox-next" onclick="lightboxNav(1)">›</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<script>
+  // Gallery images
+  const galleryImages = [
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-01.JPG', alt: 'Elektrický malotraktor ET 2000' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-02.JPG', alt: 'Tichý chod traktora' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-03.JPG', alt: 'Jazda v teréne' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-04.JPG', alt: 'Prevoz traktora' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-05.JPG', alt: 'Jazda s vlečkou' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-06.JPG', alt: 'Príves 600 kg' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-07.JPG', alt: 'Radlica na sneh' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-08.JPG', alt: 'Pluh' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-09.JPG', alt: 'Kosenie' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-10.JPG', alt: 'Zametanie' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-11.JPG', alt: 'Elektrický malotraktor v akcii 11' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-12.JPG', alt: 'Elektrický malotraktor v akcii 12' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-13.JPG', alt: 'Elektrický malotraktor v akcii 13' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-14.JPG', alt: 'Elektrický malotraktor v akcii 14' },
+    { src: 'https://www.etraktor.sk/images/galeria/elektricky-malotraktor-15.JPG', alt: 'Elektrický malotraktor v akcii 15' },
+  ];
+
+  // Build gallery
+  const grid = document.getElementById('galleryGrid');
+  galleryImages.forEach((img, i) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.innerHTML = `<img src="${img.src}" alt="${img.alt}" loading="lazy" /><div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>`;
+    item.addEventListener('click', () => openLightbox(i));
+    grid.appendChild(item);
+  });
+
+  // Lightbox
+  let currentLightboxIndex = 0;
+  let lightboxImages = galleryImages;
+
+  function openLightbox(index) {
+    lightboxImages = galleryImages;
+    currentLightboxIndex = index;
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function openLightboxDirect(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCounter').textContent = '';
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lightboxImages = null;
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    if (!lightboxImages) return;
+    document.getElementById('lightboxImg').src = lightboxImages[currentLightboxIndex].src;
+    document.getElementById('lightboxCounter').textContent = `${currentLightboxIndex + 1} / ${lightboxImages.length}`;
+  }
+
+  function lightboxNav(dir) {
+    if (!lightboxImages) return;
+    currentLightboxIndex = (currentLightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+    updateLightbox();
+  }
+
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxNav(-1);
+    if (e.key === 'ArrowRight') lightboxNav(1);
+  });
+
+  // Tabs
+  function showTab(id) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Form
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const btn = e.target;
+    btn.textContent = '✅ Odoslané – ozveme sa Vám!';
+    btn.style.background = 'var(--green-dark)';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
