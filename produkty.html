@@ -26,13 +26,30 @@
 
 @media(max-width:768px) { .vslide { padding:0 54px; } .vslider-arrow { width:44px; height:44px; font-size:1.8rem; } }
 @media(max-width:480px) { .vslide { padding:0 40px; } .vslider-arrow { width:36px; height:36px; } }
+
+/* VIDEO SLIDER 3-up */
+.vs-outer{position:relative;padding:0 60px;}
+.vs-track-wrap{overflow:hidden;}
+.vs-track{display:flex;gap:1.5rem;transition:transform 0.45s cubic-bezier(0.25,0.1,0.25,1);will-change:transform;}
+.vs-item{min-width:calc(33.333% - 1rem);flex-shrink:0;}
+.vs-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#000;}
+.vs-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.vs-label{text-align:center;color:rgba(255,255,255,0.7);font-size:0.82rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:0.6rem;}
+.vs-arrow{position:absolute;top:50%;transform:translateY(-60%);z-index:10;background:rgba(45,122,58,0.9);border:none;color:white;font-size:2rem;width:52px;height:52px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.vs-arrow:hover{background:var(--green-dark);transform:translateY(-60%) scale(1.08);}
+.vs-prev{left:0;}
+.vs-next{right:0;}
+@media(max-width:900px){.vs-item{min-width:calc(50% - 0.75rem);}.vs-outer{padding:0 48px;}}
+@media(max-width:600px){.vs-item{min-width:85%;}.vs-outer{padding:0 40px;}}
+
+.nav-logo-text{display:none !important;}
 </style>
 </head>
 <body>
 
 <nav id="mainNav"><div class="nav-inner">
   <a href="index.html" class="nav-logo">
-    <img src="data:image/jpeg;base64,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" alt="Etraktor logo" class="nav-logo-img" style="height:44px;width:44px;"/>
+    <img src="data:image/jpeg;base64,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" alt="Etraktor logo" class="nav-logo-img" style="height:44px;width:44px;"/><span class="nav-logo-sk">etraktor.sk</span>
   </a>
   <div class="nav-links">
     <a href="index.html">Domov</a>
@@ -329,109 +346,103 @@
 </div>
 </section>
 
-<section class="white" id="videa" style="padding:5rem 0;">
-<div style="max-width:1180px;margin:0 auto;padding:0 2rem 2rem;">
-  <span class="tag">ET 2000 v akcii</span>
-  <h2 class="section-title">Videogaléria</h2>
-</div>
-<div class="vslider-outer">
-  <button class="vslider-arrow vslider-prev" onclick="vNav(-1)">&#8249;</button>
-  <div class="vslider-track-outer">
-    <div class="vslider-track" id="vsliderTrack">
-      <div class="vslide">
-        <div class="vslide-title">Tichý chod traktora</div>
-        <div class="vslide-iframe-wrap">
-          <iframe src="https://www.youtube.com/embed/FNV0xPLMrZg?rel=0" 
-                  title="Tichý chod traktora" 
-                  allowfullscreen loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>      <div class="vslide">
-        <div class="vslide-title">Jazda v teréne</div>
-        <div class="vslide-iframe-wrap">
-          <iframe src="https://www.youtube.com/embed/sFnVVGhSRSA?rel=0" 
-                  title="Jazda v teréne" 
-                  allowfullscreen loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>      <div class="vslide">
-        <div class="vslide-title">Prevoz traktora</div>
-        <div class="vslide-iframe-wrap">
-          <iframe src="https://www.youtube.com/embed/X7TW_Q0MHTA?rel=0" 
-                  title="Prevoz traktora" 
-                  allowfullscreen loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>      <div class="vslide">
-        <div class="vslide-title">Jazda v teréne 2</div>
-        <div class="vslide-iframe-wrap">
-          <iframe src="https://www.youtube.com/embed/a2iA0OqyxNk?rel=0" 
-                  title="Jazda v teréne 2" 
-                  allowfullscreen loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>      <div class="vslide">
-        <div class="vslide-title">Jazda s vlečkou</div>
-        <div class="vslide-iframe-wrap">
-          <iframe src="https://www.youtube.com/embed/XqBCYFfKACA?rel=0" 
-                  title="Jazda s vlečkou" 
-                  allowfullscreen loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>      <div class="vslide">
-        <div class="vslide-title">Príves 600 kg</div>
-        <div class="vslide-iframe-wrap">
-          <iframe src="https://www.youtube.com/embed/lx0_h8WZPW4?rel=0" 
-                  title="Príves 600 kg" 
-                  allowfullscreen loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>      <div class="vslide">
-        <div class="vslide-title">Radlica na sneh</div>
-        <div class="vslide-iframe-wrap">
-          <iframe src="https://www.youtube.com/embed/RvBGJTGkJFk?rel=0" 
-                  title="Radlica na sneh" 
-                  allowfullscreen loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>      <div class="vslide">
-        <div class="vslide-title">Pluh</div>
-        <div class="vslide-iframe-wrap">
-          <iframe src="https://www.youtube.com/embed/QHpWRfJNAO0?rel=0" 
-                  title="Pluh" 
-                  allowfullscreen loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>      <div class="vslide">
-        <div class="vslide-title">Kosenie</div>
-        <div class="vslide-iframe-wrap">
-          <iframe src="https://www.youtube.com/embed/OwqRSq2XYMA?rel=0" 
-                  title="Kosenie" 
-                  allowfullscreen loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>      <div class="vslide">
-        <div class="vslide-title">Zametanie</div>
-        <div class="vslide-iframe-wrap">
-          <iframe src="https://www.youtube.com/embed/V0zBYa2BQHM?rel=0" 
-                  title="Zametanie" 
-                  allowfullscreen loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>      <div class="vslide">
-        <div class="vslide-title">ET 3000 – Nový model</div>
-        <div class="vslide-iframe-wrap">
-          <iframe src="https://www.youtube.com/embed/cyxmxjtd1nq?rel=0" 
-                  title="ET 3000 – Nový model" 
-                  allowfullscreen loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>    </div>
+<section class="white" id="videa" style="padding:5rem 0;background:#111;overflow:hidden;">
+  <div style="max-width:1180px;margin:0 auto;padding:0 2rem 2rem;">
+    <span class="tag" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);">ET 2000 v akcii</span>
+    <h2 class="section-title" style="color:white;">Videogaléria</h2>
   </div>
-  <button class="vslider-arrow vslider-next" onclick="vNav(1)">&#8250;</button>
-</div>
-<div class="vdots" id="vdots"><button class="vdot vdot-active" onclick="vGoTo(0)"></button><button class="vdot" onclick="vGoTo(1)"></button><button class="vdot" onclick="vGoTo(2)"></button><button class="vdot" onclick="vGoTo(3)"></button><button class="vdot" onclick="vGoTo(4)"></button><button class="vdot" onclick="vGoTo(5)"></button><button class="vdot" onclick="vGoTo(6)"></button><button class="vdot" onclick="vGoTo(7)"></button><button class="vdot" onclick="vGoTo(8)"></button><button class="vdot" onclick="vGoTo(9)"></button><button class="vdot" onclick="vGoTo(10)"></button></div>
+  <div class="vs-outer">
+    <button class="vs-arrow vs-prev" onclick="vsNav(-1)">&#8249;</button>
+    <div class="vs-track-wrap">
+      <div class="vs-track" id="vsTrack">
+        <div class="vs-item">
+          <div class="vs-ratio">
+            <iframe src="https://www.youtube.com/embed/I7Z70rEkqOM?rel=0&modestbranding=1" 
+                    title="Tichý chod traktora" allowfullscreen loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+          <div class="vs-label">Tichý chod traktora</div>
+        </div>
+        <div class="vs-item">
+          <div class="vs-ratio">
+            <iframe src="https://www.youtube.com/embed/Cfy4jgR9W-o?rel=0&modestbranding=1" 
+                    title="Jazda v teréne" allowfullscreen loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+          <div class="vs-label">Jazda v teréne</div>
+        </div>
+        <div class="vs-item">
+          <div class="vs-ratio">
+            <iframe src="https://www.youtube.com/embed/fLnGy33aTTY?rel=0&modestbranding=1" 
+                    title="Prevoz traktora" allowfullscreen loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+          <div class="vs-label">Prevoz traktora</div>
+        </div>
+        <div class="vs-item">
+          <div class="vs-ratio">
+            <iframe src="https://www.youtube.com/embed/cJbF7qgYVOU?rel=0&modestbranding=1" 
+                    title="Jazda v teréne" allowfullscreen loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+          <div class="vs-label">Jazda v teréne</div>
+        </div>
+        <div class="vs-item">
+          <div class="vs-ratio">
+            <iframe src="https://www.youtube.com/embed/7MlTOTEkZIw?rel=0&modestbranding=1" 
+                    title="Jazda s vlečkou" allowfullscreen loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+          <div class="vs-label">Jazda s vlečkou</div>
+        </div>
+        <div class="vs-item">
+          <div class="vs-ratio">
+            <iframe src="https://www.youtube.com/embed/6EyL3EoOSRc?rel=0&modestbranding=1" 
+                    title="Príves 600 kg" allowfullscreen loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+          <div class="vs-label">Príves 600 kg</div>
+        </div>
+        <div class="vs-item">
+          <div class="vs-ratio">
+            <iframe src="https://www.youtube.com/embed/Tox78aF9JGE?rel=0&modestbranding=1" 
+                    title="Radlica na sneh" allowfullscreen loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+          <div class="vs-label">Radlica na sneh</div>
+        </div>
+        <div class="vs-item">
+          <div class="vs-ratio">
+            <iframe src="https://www.youtube.com/embed/2fQrQQxhaTo?rel=0&modestbranding=1" 
+                    title="Pluh" allowfullscreen loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+          <div class="vs-label">Pluh</div>
+        </div>
+        <div class="vs-item">
+          <div class="vs-ratio">
+            <iframe src="https://www.youtube.com/embed/udw-Vbazfhs?rel=0&modestbranding=1" 
+                    title="Kosenie / Zametanie" allowfullscreen loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+          <div class="vs-label">Kosenie / Zametanie</div>
+        </div>
+      </div>
+    </div>
+    <button class="vs-arrow vs-next" onclick="vsNav(1)">&#8250;</button>
+  </div>
 </section>
+
+
 
 
 
@@ -511,5 +522,23 @@ function vGoTo(n) {
   document.querySelectorAll('.vdot').forEach(function(d,i){ d.classList.toggle('vdot-active', i===vCur); });
 }
 function vNav(d) { vGoTo(vCur + d); }
+</script>
+<script>
+// 3-up video slider
+(function(){
+  var cur=0, total=9, perView=3;
+  function getPerView(){ return window.innerWidth<=600?1:window.innerWidth<=900?2:3; }
+  function vsNav(d){
+    perView=getPerView();
+    var maxSlide=total-perView;
+    cur=Math.max(0,Math.min(cur+d, maxSlide));
+    var item=document.querySelector('.vs-item');
+    if(!item)return;
+    var gap=24, w=item.offsetWidth+gap;
+    document.getElementById('vsTrack').style.transform='translateX(-'+(cur*w)+'px)';
+  }
+  window.vsNav=vsNav;
+  window.addEventListener('resize',function(){vsNav(0);});
+})();
 </script>
 </body></html>
